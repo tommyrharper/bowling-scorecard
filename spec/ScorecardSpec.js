@@ -10,25 +10,33 @@ describe('Scorecard,', function() {
       expect(scorecard.score).toEqual(0);
     });
 
-    it('Score of 4 for rolls 1, 3', () => {
+    it('Roll an open frame', () => {
       scorecard.addRoll(1);
       scorecard.addRoll(3);
       expect(scorecard.score).toEqual(4);
     });
 
-    it('Score of 18 for 10, 1, 3', () => {
+    it('Roll a strike, open frame', () => {
       scorecard.addRoll(10);
       scorecard.addRoll(1);
       scorecard.addRoll(3);
       expect(scorecard.score).toEqual(18);
     });
 
-    it('Score of 18 for 10, 1, 3', () => {
+    it('Role a spare, open frame', () => {
       scorecard.addRoll(5);
       scorecard.addRoll(5);
       scorecard.addRoll(3);
       scorecard.addRoll(2);
       expect(scorecard.score).toEqual(18);
+    });
+
+    it('Role a spare, strike, strike', () => {
+      scorecard.addRoll(5);
+      scorecard.addRoll(5);
+      scorecard.addRoll(10);
+      scorecard.addRoll(10);
+      expect(scorecard.score).toEqual(40);
     });
   });
 });
