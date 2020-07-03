@@ -1,0 +1,24 @@
+{
+  "name": "bowling-scorecard",
+  "version": "1.0.0",
+  "description": "This is a JavaScript application for a digital Bowling Scorecard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyrharper/bowling-scorecard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tommyrharper/bowling-scorecard/issues"
+  },
+  "homepage": "https://github.com/tommyrharper/bowling-scorecard#readme",
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}
