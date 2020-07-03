@@ -31,12 +31,14 @@ class Frame10 {
   }
   addSecondRoll(roll) {
     this.roll2 = roll;
-    if (this.roll1 + roll === 10) {
-      this.finalType = 'Spare';
-      this.type = 'Complete';
-    } else {
-      this.finalType = 'OpenFrame';
-      this.type = 'Complete';
+    if (this.roll1 !== 10) {
+      if (this.roll1 + roll === 10) {
+        this.finalType = 'Spare';
+        this.type = 'Complete';
+      } else {
+        this.finalType = 'OpenFrame';
+        this.type = 'Complete';
+      }
     }
   }
   addBonus(bonus) {
