@@ -40,11 +40,14 @@ class Scorecard {
     }
   }
   addFinalFrameBonus(roll) {
-    if (this.frames[this.frame].type === 'Complete') {
+    console.log('this.lastFrame', this.lastFrame);
+    console.log('this.frames[this.frame].roll2', this.frames[this.frame].roll2);
+    // if (this.frames[this.frame].type === 'Complete') {
+    if (this.frames[this.frame].roll3 !== undefined) {
       // 3rd roll, frame 10 -> No bonus
-    }
-    if (this.frames[this.frame].roll2 !== undefined) {
+    } else if (this.frames[this.frame].roll2 !== undefined) {
       // 2nd roll, frame 10 -> Less bonus
+      console.log('second last possible roll:', roll);
       this.firstStrikeBonus(roll);
       this.addSpareBonus(roll);
     } else {
