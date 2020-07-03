@@ -2,7 +2,7 @@ class Scorecard {
   constructor() {
     this.score = 0;
     this.lastFrame;
-    this.currentFrame;
+    this.frame;
     this.secondLastFrame;
     this.frames = [
       new Frame(),
@@ -23,7 +23,7 @@ class Scorecard {
       if (this.frames[i].type === 'Incomplete') {
         console.log('this frame:', i+1);
         this.frames[i].addRoll(roll);
-        this.secondLastFrame = i-2; this.lastFrame = i-1; this.currentFrame = i;
+        this.secondLastFrame = i-2; this.lastFrame = i-1; this.frame = i;
         break;
       }
     }
@@ -40,9 +40,9 @@ class Scorecard {
     }
   }
   addFinalFrameBonus(roll) {
-    if (this.frames[this.currentFrame].type === 'Complete') {
+    if (this.frames[this.frame].type === 'Complete') {
       // 3rd roll, frame 10 -> No bonus
-    } else if (this.frames[this.currentFrame].roll2 !== undefined) {
+    } else if (this.frames[this.frame].roll2 !== undefined) {
       // 2nd roll, frame 10 -> Less bonus
       this.firstStrikeBonus(roll);
       this.addSpareBonus(roll);
@@ -70,9 +70,7 @@ class Scorecard {
   }
   addSpareBonus(roll) {
     if (this.frames[this.lastFrame].type === 'Spare') {
-      if (this.frames[this.currentFrame].type === 'Incomplete') {
-        this.frames[this.lastFrame].addBonus(roll);
-      } else if (this.frames[this.currentFrame].type === 'Strike') {
+      if (['Incomplete', 'Strike'].includes(this.frames[this.frame].type)) {
         this.frames[this.lastFrame].addBonus(roll);
       }
     }
