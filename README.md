@@ -238,3 +238,5 @@ As far as I can tell that is it. I can't think of any more edge cases. It seems 
 Okay now to build a user interface.
 
 Lets start by creating ```index.html``` and ```interface.js``` and installing ```jquery.js```.
+
+Now I quickly sketch out a table in HTML, and write some logic in jQuery to display the results to the screen.
