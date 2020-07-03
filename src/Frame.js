@@ -4,7 +4,6 @@ class Frame {
     this.roll1 = undefined;
     this.roll2 = undefined;
     this.score = 0;
-    this.stopBonus = false;
   }
   addRoll(roll) {
     if (this.roll1 === undefined) {
