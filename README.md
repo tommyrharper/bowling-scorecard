@@ -140,4 +140,30 @@ Now I need to do the same for isSpare and isOpenFrame.
 - Test for isOpenFrame. RED.
 - Add isOpenFrame method Frame class. GREEN.
 
-Now lets test for some more complex behaviour. A strike, 1, 3 should score 18. RED
+Now lets test for some more complex behaviour. A strike, 1, 3 should score 18. RED.
+
+Hmmm, this is strangely complex to solve, I think I need to refactor.
+
+### Realising I need to refactor
+
+I started running into some complexity that seemed unnecessary. Time to redesign my code to make more sense.
+
+Here is my new design for the Frame class:
+
+| Objects | Messages |
+|---------|----------|
+| Frame | this.type <br> this.roll1 <br> this.roll2 <br> this.score <br> addRoll(roll) <br> addBonus(bonus) |
+| Scorecard | this.score <br> this.previousFrame <br> this.frames <br> addRoll(roll) <br> addBonusPoints(roll) <br> updateScore() |
+
+This simplifies the class, removing a method for checking for each type, and it allows the addition of single rolls to the Frame class, simplifying the process for the Scorecard class.
+
+Few that has made things so much easier. My code is much more elegant now!
+
+Now I can provide a simple solution for that test earlier.
+
+- Add addBonusPoints method. GREEN.
+
+### Continue with TDD for Scorecard Class
+
+Okay lets continue testing the scorecard class.
+
