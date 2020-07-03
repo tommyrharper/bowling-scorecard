@@ -48,7 +48,7 @@ describe('Frame,', function() {
       expect(frame.isStrike()).toEqual(false);
     });
 
-    it('Knows if it is not a strike', () => {
+    it('Knows if it is a strike', () => {
       frame.addRoll(10);
       expect(frame.isStrike()).toEqual(true);
     });
