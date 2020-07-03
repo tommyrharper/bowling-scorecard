@@ -11,6 +11,13 @@ class Frame {
       return false;
     }
   }
+  isSpare() {
+    if (this.roll1 + this.roll2 === 10 && this.roll1 != 10) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   addBonus(bonus) {
     this.score += bonus;
   }
