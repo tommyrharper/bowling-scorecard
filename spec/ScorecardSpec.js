@@ -126,5 +126,15 @@ describe('Scorecard,', function() {
       expect(scorecard.score).toEqual(275);
       expect(scorecard.frames[9].type).toEqual('Complete');
     });
+
+    it('9 strikes, 2,2 scores 250', () => {
+      for (let i = 0; i < 9; i++) {
+        scorecard.addRoll(10);
+      }
+      scorecard.addRoll(2);
+      scorecard.addRoll(2);
+      expect(scorecard.score).toEqual(250);
+      expect(scorecard.frames[9].type).toEqual('Complete');
+    });
   });
 });
