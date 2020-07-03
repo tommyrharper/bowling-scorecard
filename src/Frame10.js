@@ -34,7 +34,6 @@ class Frame10 {
     if (this.finalType !== 'Strike') {
       if (this.roll1 + roll === 10) {
         this.finalType = 'Spare';
-        this.type = 'Complete';
       } else {
         this.finalType = 'OpenFrame';
         this.type = 'Complete';
