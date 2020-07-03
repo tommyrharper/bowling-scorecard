@@ -61,7 +61,7 @@ Then I had to configure Jasmine, so I added the following code to ```SpecRunner.
   <script src="spec/Frame10Spec.js"></script>
 ```
 
-### Writing my first tests
+## Writing my first tests
 
 First I want to Test Drive the creation of my Scorecard and Frame classes. Lets start with something simple, the score should start at 0:
 ```JavaScript
@@ -144,7 +144,7 @@ Now lets test for some more complex behaviour. A strike, 1, 3 should score 18. R
 
 Hmmm, this is strangely complex to solve, I think I need to refactor.
 
-### Realising I need to refactor
+## Realising I need to refactor
 
 I started running into some complexity that seemed unnecessary. Time to redesign my code to make more sense.
 
@@ -163,7 +163,55 @@ Now I can provide a simple solution for that test earlier.
 
 - Add addBonusPoints method. GREEN.
 
-### Continue with TDD for Scorecard Class
+## Continue with TDD for Scorecard Class
 
 Okay lets continue testing the scorecard class.
+
+I write a test for a spare followed by and open frame. RED.
+
+- Add logic to the addBonusPoints method. GREEN.
+
+It now occurs to me I need to plan systematically my testing to cover all possibilites.
+
+### Planning Tests
+
+The order affects the score, so I have to test bost ```Spare | Strike``` and ```Strike | Spare``` for example.
+
+| Frame 1 | Frame 2 |
+|---------|---------|
+| Open Frame | Open Frame |
+| Open Frame | Spare |
+| Open Frame | Strike |
+| Spare | Open Frame |
+| Spare | Spare |
+| Spare | Strike |
+| Strike | Open Frame |
+| Strike | Spare |
+| Strike | Strike |
+
+Okay lets systematically test these.
+
+### Back to TDD with the Scorecard Class
+
+So I can see a whole with my logic, so I am going straight into writing a test for that, a spare, strike, strike. RED.
+
+- Add some logic to addBonusPoints. Green.
+- Now lets refactor the code to improve readability.
+- I created two new methods, addStrikeBonus and addSpareBonus. REFACTORED.
+
+## Testing for full games
+
+Now lets test the functionality of this app from start to finish.
+
+First lets test a perfect game, 300 points for bowling 12 strikes! RED.
+
+- Aha! I need to create my ```Frame10.js``` Frame10 class to deal with this situation.
+- Copy code from ```Frame.js``` class to start. They are going to be almost identical.
+- Write test for adding a third roll to Frame10. RED.
+- Add this.roll3 to Frame10. GREEN.
+- Add logic to stop certain bonus points accruing on the 10th game. GREEN.
+
+Yay, we did it! A perfect game now scores 300.
+
+
 
