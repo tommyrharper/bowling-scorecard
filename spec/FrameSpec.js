@@ -32,5 +32,15 @@ describe('Frame,', function() {
       frame = new Frame(10);
       expect(frame.isStrike()).toEqual(true);
     });
+
+    it('Knows if it is a spare', () => {
+      frame = new Frame(5, 5);
+      expect(frame.isSpare()).toEqual(true);
+    });
+
+    it('Knows if it is not a spare', () => {
+      frame = new Frame(10);
+      expect(frame.isSpare()).toEqual(false);
+    });
   });
 });
