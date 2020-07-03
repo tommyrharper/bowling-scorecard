@@ -49,7 +49,6 @@ class Scorecard {
       // 2nd roll, frame 10 -> Less bonus
       console.log('second last possible roll:', roll);
       this.firstStrikeBonus(roll);
-      this.addSpareBonus(roll);
     } else {
       // 1st roll, frame 10 -> Full bonus
       this.addFullBonus(roll);
@@ -73,6 +72,7 @@ class Scorecard {
     }
   }
   addSpareBonus(roll) {
+    console.log('addSpareBonus:', roll);
     if (this.frames[this.lastFrame].type === 'Spare') {
       if (['Incomplete', 'Strike'].includes(this.frames[this.frame].type)) {
         this.frames[this.lastFrame].addBonus(roll);
