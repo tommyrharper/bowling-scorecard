@@ -16,10 +16,8 @@ class Scorecard {
     ];
   }
   addRoll(roll) {
-    console.log('roll', roll);
     for (let i = 0; i < 10; i++) {
       if (this.frames[i].type === 'Incomplete') {
-        console.log('found incomplete frame:', i+1);
         this.frames[i].addRoll(roll);
         this.previousFrame = i-1;
         break;
@@ -31,9 +29,7 @@ class Scorecard {
   addBonusPoints(roll) {
     if (this.previousFrame === 8) {
       if (this.frames[this.previousFrame+1].type === 'Complete') {
-        console.log('final frame complete');
-      } else if (this.frames[this.previousFrame+1].stopBonus === true) {
-        console.log('seond last frame');
+      } else if (this.frames[this.previousFrame+1].roll2 !== undefined) {
         if (this.frames[this.previousFrame].type === 'Strike') {
           this.frames[this.previousFrame].addBonus(roll);
         }
@@ -68,7 +64,5 @@ class Scorecard {
     for (let i = 0; i < 10; i++) {
       this.score += this.frames[i].score;
     }
-    // console.log('this.score', this.score);
-    console.log('this.frames', this.frames);
   }
 }
