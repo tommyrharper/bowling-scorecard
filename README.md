@@ -233,3 +233,8 @@ Test for 10 times open frames and then a 5 scores 150. RED.
 As far as I can tell that is it. I can't think of any more edge cases. It seems to be working.
 
 
+## User inteface
+
+Okay now to build a user interface.
+
+Lets start by creating ```index.html``` and ```interface.js``` and installing ```jquery.js```.
