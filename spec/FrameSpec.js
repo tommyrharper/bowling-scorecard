@@ -8,4 +8,11 @@ describe('Frame,', function() {
       expect(frame.roll2).toEqual(2);
     });
   });
+
+  describe('Scoring', function() {
+    it('A 1 and a 2 scores 3', () => {
+      frame = new Frame(1, 2);
+      expect(frame.score).toEqual(3);
+    });
+  });
 });
