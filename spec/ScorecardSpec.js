@@ -22,5 +22,13 @@ describe('Scorecard,', function() {
       scorecard.addRoll(3);
       expect(scorecard.score).toEqual(18);
     });
+
+    it('Score of 18 for 10, 1, 3', () => {
+      scorecard.addRoll(5);
+      scorecard.addRoll(5);
+      scorecard.addRoll(3);
+      scorecard.addRoll(2);
+      expect(scorecard.score).toEqual(18);
+    });
   });
 });
