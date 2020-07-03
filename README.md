@@ -98,3 +98,22 @@ Now to similarly test drive the creation of the Frame class.
 I write the first test to check the Frame stores the correct rolls. RED.
 
 Create the class with ```this.roll1``` and ```this.roll2```. GREEN.
+
+Then I want to test for Frame score. 1 and 3 should score 4. Red
+
+Add ```this.score = roll1 + roll2``` to the Frame constructor. Green.
+
+Now back to ```Scorecard.js```. I write a test for adding two rolls, 1 and 3. RED.
+
+I create the updateScore function to solve this:
+
+```JavaScript
+  updateScore() {
+    let index = 0;
+    for (index; index < this.frames.length; index++) {
+      this.score += this.frames[index].score;
+    }
+  }
+```
+
+GREEN.
