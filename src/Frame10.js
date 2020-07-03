@@ -31,7 +31,7 @@ class Frame10 {
   }
   addSecondRoll(roll) {
     this.roll2 = roll;
-    if (this.roll1 !== 10) {
+    if (this.finalType !== 'Strike') {
       if (this.roll1 + roll === 10) {
         this.finalType = 'Spare';
         this.type = 'Complete';
