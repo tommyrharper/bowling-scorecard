@@ -136,5 +136,14 @@ describe('Scorecard,', function() {
       expect(scorecard.score).toEqual(250);
       expect(scorecard.frames[9].type).toEqual('Complete');
     });
+
+    it('10 * 5,5 and 5 scores 150 ', () => {
+      for (let i = 0; i < 20; i++) {
+        scorecard.addRoll(5);
+      }
+      scorecard.addRoll(5);
+      expect(scorecard.score).toEqual(150);
+      expect(scorecard.frames[9].type).toEqual('Complete');
+    });
   });
 });
