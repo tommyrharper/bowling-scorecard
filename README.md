@@ -213,5 +213,14 @@ First lets test a perfect game, 300 points for bowling 12 strikes! RED.
 
 Yay, we did it! A perfect game now scores 300.
 
+First lets refactor the code a bit. I pulled out a few extra methods, that is more readable now.
+
+Test for 9 strikes, one spare, on strike scores 275. RED.
+
+Oh no! I wasn't expecting that. Lets find the problem:
+
+- I made a false assumption that on the final frame, the game is complete after a spare. This is false! This is the root of the error. Lets fix it. GREEN.
+- Time to refactor. I refactored a few methods including this.addSpareBonus(). GREEN.
+
 
 
