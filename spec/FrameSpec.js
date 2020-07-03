@@ -42,9 +42,9 @@ describe('Frame,', function() {
   });
 
   describe('Knows type of frame', () => {
-    it('Knows if it is undefined', () => {
+    it('Knows if it is incomplete', () => {
       frame.addRoll(5);
-      expect(frame.type).toEqual(undefined);
+      expect(frame.type).toEqual('Incomplete');
     });
 
     it('Knows if it is a strike', () => {
