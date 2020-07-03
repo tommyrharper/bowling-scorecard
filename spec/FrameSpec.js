@@ -14,5 +14,11 @@ describe('Frame,', function() {
       frame = new Frame(1, 2);
       expect(frame.score).toEqual(3);
     });
+
+    it('Accepts bonus points', () => {
+      frame = new Frame(10);
+      frame.addBonus(5);
+      expect(frame.score).toEqual(15);
+    });
   });
 });
