@@ -4,4 +4,7 @@ class Frame {
     this.roll2 = roll2;
     this.score = roll1 + roll2;
   }
+  addBonus(bonus) {
+    this.score += bonus;
+  }
 }
