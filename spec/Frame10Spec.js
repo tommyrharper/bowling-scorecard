@@ -50,27 +50,27 @@ describe('Frame,', function() {
     });
   });
 
-  describe('Knows type of frame', () => {
+  describe('Knows finalType of frame', () => {
     it('Knows if it is incomplete', () => {
       frame.addRoll(5);
-      expect(frame.type).toEqual('Incomplete');
+      expect(frame.finalType).toEqual('Incomplete');
     });
 
     it('Knows if it is a strike', () => {
       frame.addRoll(10);
-      expect(frame.type).toEqual('Strike');
+      expect(frame.finalType).toEqual('Strike');
     });
 
     it('Knows if it is a spare', () => {
       frame.addRoll(5);
       frame.addRoll(5);
-      expect(frame.type).toEqual('Spare');
+      expect(frame.finalType).toEqual('Spare');
     });
 
     it('Knows if it is an open frame', () => {
       frame.addRoll(2);
       frame.addRoll(5);
-      expect(frame.type).toEqual('OpenFrame');
+      expect(frame.finalType).toEqual('OpenFrame');
     });
   });
 });
