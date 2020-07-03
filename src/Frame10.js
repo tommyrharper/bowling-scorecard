@@ -1,7 +1,6 @@
 class Frame10 {
   constructor() {
     this.type = 'Incomplete';
-    this.stopBonus = false;
     this.finalType = 'Incomplete';
     this.roll1 = undefined;
     this.roll2 = undefined;
@@ -31,7 +30,6 @@ class Frame10 {
     }
   }
   addSecondRoll(roll) {
-    this.stopBonus = true;
     this.roll2 = roll;
     if (this.finalType !== 'Strike') {
       if (this.roll1 + roll === 10) {
