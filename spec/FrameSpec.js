@@ -21,4 +21,16 @@ describe('Frame,', function() {
       expect(frame.score).toEqual(15);
     });
   });
+
+  describe('Knows type of frame', () => {
+    it('Knows if it is not a strike', () => {
+      frame = new Frame(5, 5);
+      expect(frame.isStrike()).toEqual(false);
+    });
+
+    it('Knows if it is not a strike', () => {
+      frame = new Frame(10);
+      expect(frame.isStrike()).toEqual(true);
+    });
+  });
 });
