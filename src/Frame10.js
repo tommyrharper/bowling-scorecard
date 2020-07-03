@@ -1,6 +1,7 @@
 class Frame10 {
   constructor() {
     this.type = 'Incomplete';
+    this.finalType = 'Incomplete';
     this.roll1 = undefined;
     this.roll2 = undefined;
     this.roll3 = undefined;
@@ -13,6 +14,7 @@ class Frame10 {
       this.addSecondRoll(roll);
     } else if (this.roll3 === undefined) {
       this.roll3 = roll;
+      this.type = 'Complete';
     } else {
       throw new Error('Frame already full');
     }
@@ -22,19 +24,19 @@ class Frame10 {
     this.score += roll;
   }
   addFirstRoll(roll) {
-    if (this.roll1 === undefined) {
-      this.roll1 = roll;
-      if (roll === 10) {
-        this.type = 'Strike';
-      }
+    this.roll1 = roll;
+    if (roll === 10) {
+      this.finalType = 'Strike';
     }
   }
   addSecondRoll(roll) {
     this.roll2 = roll;
     if (this.roll1 + roll === 10) {
-      this.type = 'Spare';
+      this.finalType = 'Spare';
+      this.type = 'Complete';
     } else {
-      this.type = 'OpenFrame';
+      this.finalType = 'OpenFrame';
+      this.type = 'Complete';
     }
   }
   addBonus(bonus) {
