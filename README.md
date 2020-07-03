@@ -10,6 +10,15 @@ eslint --init
 unzip jasmine-standalone-3.5.0.zip
 ```
 
+### Setting up CI
+
+Create ```.travis.yml```
+```yml
+language: node_js
+node_js:
+  - "stable"
+```
+
 # Developmental Journal
 
 ## Planning
