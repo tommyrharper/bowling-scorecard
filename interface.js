@@ -12,26 +12,18 @@ $(document).ready(function() {
     const frameIndex = scorecard.frame;
 
 
-    if (rollScore === 10) {
+    // if (rollScore === 10) {
+    if (scorecard.frames[frameIndex].type === 'Strike') {
       $('#roll' + numberOfRolls).text(rollScore);
       numberOfRolls += 1;
       $('#roll' + numberOfRolls).text('/');
     } else {
       $('#roll' + numberOfRolls).text(rollScore);
     }
-    
-    // $('#frame' + frameNumber).text(scorecard.frames[frameIndex].score);
-    console.log('scorecard.frames', scorecard.frames);
+
     for (let i = 0; i < 10; i++) {
-      // console.log('scorecard.frames[i].type', scorecard.frames[i].type);
-      console.log('i', i);
       if (scorecard.frames[i].type !== 'Incomplete') {
-        console.log('i', i);
-        console.log('INSIDE');
-        console.log('(i+1)', (i+1));
-        // $('#frame' + (i+1)).text("yo");
         $('#frame' + (i+1)).text(scorecard.frames[i].score);
-        // break;
       }
     }
 
