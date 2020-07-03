@@ -123,8 +123,7 @@ describe('Scorecard,', function() {
       scorecard.addRoll(5);
       scorecard.addRoll(5);
       scorecard.addRoll(10);
-      // expect(scorecard.score).toEqual(275);
-      // expect(scorecard.score).toEqual(265);
+      expect(scorecard.score).toEqual(275);
       expect(scorecard.frames[9].type).toEqual('Complete');
     });
   });
