@@ -31,6 +31,11 @@ class Scorecard {
     if (this.previousFrame >= 0) {
       if (this.frames[this.previousFrame].type === 'Strike') {
         this.frames[this.previousFrame].addBonus(roll);
+        if (this.previousFrame >= 1) {
+          if (this.frames[this.previousFrame-1].type === 'Strike') {
+            this.frames[this.previousFrame].addBonus(roll);
+          }
+        }
       }
       if (this.frames[this.previousFrame].type === 'Spare' &&
       this.frames[this.previousFrame+1].type === 'Incomplete') {
@@ -43,5 +48,6 @@ class Scorecard {
     for (let i = 0; i < 10; i++) {
       this.score += this.frames[i].score;
     }
+    console.log('this.score', this.score);
   }
 }
