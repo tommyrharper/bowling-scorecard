@@ -1,7 +1,7 @@
 class Scorecard {
   constructor() {
     this.score = 0;
-    this.currentFrame = 0;
+    this.previousFrame = 0;
     this.frames = [
       new Frame(),
       new Frame(),
@@ -20,7 +20,7 @@ class Scorecard {
     for (let i = 0; i < 10; i++) {
       if (this.frames[i].type === 'Incomplete') {
         this.frames[i].addRoll(roll);
-        this.currentFrame = i;
+        this.previousFrame = i-1;
         break;
       }
     }
@@ -28,11 +28,9 @@ class Scorecard {
     this.updateScore();
   }
   addBonusPoints(roll) {
-    const previousFrame = this.currentFrame - 1;
-
-    if (previousFrame >= 0) {
-      if (this.frames[previousFrame].type === 'Strike') {
-        this.frames[previousFrame].addBonus(roll);
+    if (this.previousFrame >= 0) {
+      if (this.frames[this.previousFrame].type === 'Strike') {
+        this.frames[this.previousFrame].addBonus(roll);
       }
     }
   }
