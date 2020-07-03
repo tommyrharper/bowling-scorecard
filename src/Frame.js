@@ -18,6 +18,13 @@ class Frame {
       return false;
     }
   }
+  isOpenFrame() {
+    if (this.roll1 + this.roll2 < 10) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   addBonus(bonus) {
     this.score += bonus;
   }
