@@ -42,5 +42,15 @@ describe('Frame,', function() {
       frame = new Frame(10);
       expect(frame.isSpare()).toEqual(false);
     });
+
+    it('Knows if it is an open frame', () => {
+      frame = new Frame(2, 5);
+      expect(frame.isOpenFrame()).toEqual(true);
+    });
+
+    it('Knows if it is not an open frame', () => {
+      frame = new Frame(10);
+      expect(frame.isOpenFrame()).toEqual(false);
+    });
   });
 });
