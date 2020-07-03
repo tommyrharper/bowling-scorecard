@@ -1,6 +1,6 @@
 class Frame {
   constructor() {
-    this.type = undefined;
+    this.type = 'Incomplete';
     this.roll1 = undefined;
     this.roll2 = undefined;
     this.score = undefined;
