@@ -32,13 +32,15 @@ class Scorecard {
       if (this.frames[this.previousFrame].type === 'Strike') {
         this.frames[this.previousFrame].addBonus(roll);
       }
+      if (this.frames[this.previousFrame].type === 'Spare' &&
+      this.frames[this.previousFrame+1].type === 'Incomplete') {
+        this.frames[this.previousFrame].addBonus(roll);
+      }
     }
   }
   updateScore() {
     this.score = 0;
     for (let i = 0; i < 10; i++) {
-      // console.log('i', i);
-      // console.log('this.frames', this.frames);
       this.score += this.frames[i].score;
     }
   }
