@@ -32,7 +32,7 @@ describe('Frame,', function() {
       frame.addRoll(1);
       expect(function() {
         frame.addRoll(1);
-      }).toThrowError('Frame already full');
+      }).toThrowError('Game Complete');
     });
   });
 
