@@ -16,17 +16,19 @@ describe('Frame,', function() {
     it('Accepts a strike', () => {
       frame.addRoll(10);
       expect(frame.roll1).toEqual(10);
-      expect(frame.roll2).toEqual(0);
+      expect(frame.roll2).toEqual(undefined);
     });
 
     it('Accepts a third roll', () => {
       frame.addRoll(10);
+      frame.addRoll(1);
       frame.addRoll(1);
       expect(frame.roll3).toEqual(1);
     });
 
     it('Rejects fourth roll', () => {
       frame.addRoll(10);
+      frame.addRoll(1);
       frame.addRoll(1);
       expect(function() {
         frame.addRoll(1);
