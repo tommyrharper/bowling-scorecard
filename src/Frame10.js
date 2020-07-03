@@ -8,6 +8,9 @@ class Frame10 {
     this.score = 0;
   }
   addRoll(roll) {
+    if (this.type === 'Complete') {
+      throw new Error('Game Complete');
+    }
     if (this.roll1 === undefined) {
       this.addFirstRoll(roll);
     } else if (this.roll2 === undefined) {
