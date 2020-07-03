@@ -76,30 +76,30 @@ describe('Frame,', function() {
       expect(frame.type).toEqual('Incomplete');
     });
 
-    it('Knows its is complete after a spare', () => {
+    it('Knows it is incomplete after a spare', () => {
       frame.addRoll(5);
       frame.addRoll(5);
-      expect(frame.type).toEqual('Complete');
+      expect(frame.type).toEqual('Incomplete');
     });
 
-    it('Knows its is complete after an open frame', () => {
+    it('Knows it is complete after an open frame', () => {
       frame.addRoll(5);
       frame.addRoll(2);
       expect(frame.type).toEqual('Complete');
     });
 
-    it('Knows its is incomplete after a strike', () => {
+    it('Knows it is incomplete after a strike', () => {
       frame.addRoll(10);
       expect(frame.type).toEqual('Incomplete');
     });
 
-    it('Knows its is incomplete after a strike and 1 roll', () => {
+    it('Knows it is incomplete after a strike and 1 roll', () => {
       frame.addRoll(10);
       frame.addRoll(5);
       expect(frame.type).toEqual('Incomplete');
     });
 
-    it('Knows its is complete after a strike and 2 rolls', () => {
+    it('Knows it is complete after a strike and 2 rolls', () => {
       frame.addRoll(10);
       frame.addRoll(5);
       frame.addRoll(5);
