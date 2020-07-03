@@ -3,7 +3,7 @@ class Frame {
     this.type = 'Incomplete';
     this.roll1 = undefined;
     this.roll2 = undefined;
-    this.score = undefined;
+    this.score = 0;
   }
   addRoll(roll) {
     if (this.roll1 === undefined) {
@@ -13,10 +13,10 @@ class Frame {
     } else {
       throw new Error('Frame already full');
     }
-    this.updateFrameScore();
+    this.updateFrameScore(roll);
   }
-  updateFrameScore() {
-    this.score = this.roll1 + this.roll2;
+  updateFrameScore(roll) {
+    this.score += roll;
   }
   addFirstRoll(roll) {
     if (this.roll1 === undefined) {
