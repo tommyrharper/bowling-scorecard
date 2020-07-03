@@ -67,13 +67,12 @@ class Scorecard {
     }
   }
   addSpareBonus(roll) {
-    if (this.frames[this.previousFrame].type === 'Spare' &&
-    this.frames[this.previousFrame+1].type === 'Incomplete') {
-      this.frames[this.previousFrame].addBonus(roll);
-    }
-    if (this.frames[this.previousFrame].type === 'Spare' &&
-    this.frames[this.previousFrame+1].type === 'Strike') {
-      this.frames[this.previousFrame].addBonus(roll);
+    if (this.frames[this.previousFrame].type === 'Spare') {
+      if (this.frames[this.previousFrame+1].type === 'Incomplete') {
+        this.frames[this.previousFrame].addBonus(roll);
+      } else if (this.frames[this.previousFrame+1].type === 'Strike') {
+        this.frames[this.previousFrame].addBonus(roll);
+      }
     }
   }
   updateScore() {
