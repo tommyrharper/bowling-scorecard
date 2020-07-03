@@ -51,11 +51,6 @@ describe('Frame,', function() {
   });
 
   describe('Knows finalType of frame', () => {
-    it('Knows if it is incomplete', () => {
-      frame.addRoll(5);
-      expect(frame.finalType).toEqual('Incomplete');
-    });
-
     it('Knows if it is a strike', () => {
       frame.addRoll(10);
       expect(frame.finalType).toEqual('Strike');
@@ -71,6 +66,37 @@ describe('Frame,', function() {
       frame.addRoll(2);
       frame.addRoll(5);
       expect(frame.finalType).toEqual('OpenFrame');
+    });
+  });
+
+  describe('Knows if game is complete', () => {
+    it('Knows it is incomplete after 1 roll', () => {
+      frame.addRoll(5);
+      expect(frame.finalType).toEqual('Incomplete');
+      expect(frame.type).toEqual('Incomplete');
+    });
+
+    it('Knows its is complete after a spare', () => {
+      frame.addRoll(5);
+      frame.addRoll(5);
+      expect(frame.type).toEqual('Complete');
+    });
+
+    it('Knows its is complete after an open frame', () => {
+      frame.addRoll(5);
+      frame.addRoll(2);
+      expect(frame.type).toEqual('Complete');
+    });
+
+    it('Knows its is incomplete after a strike', () => {
+      frame.addRoll(10);
+      expect(frame.type).toEqual('Incomplete');
+    });
+
+    it('Knows its is incomplete after a strike and 1 roll', () => {
+      frame.addRoll(10);
+      frame.addRoll(5);
+      expect(frame.type).toEqual('Incomplete');
     });
   });
 });
