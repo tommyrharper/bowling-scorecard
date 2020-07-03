@@ -23,33 +23,44 @@ class Scorecard {
         break;
       }
     }
-    this.addBonusPoints(roll);
+    if (this.previousFrame >= 0) {
+      this.addBonusPoints(roll);
+    }
     this.updateScore();
   }
   addBonusPoints(roll) {
     if (this.previousFrame === 8) {
-      if (this.frames[this.previousFrame+1].type === 'Complete') {
-      } else if (this.frames[this.previousFrame+1].roll2 !== undefined) {
-        if (this.frames[this.previousFrame].type === 'Strike') {
-          this.frames[this.previousFrame].addBonus(roll);
-        }
-        this.addSpareBonus(roll);
-      } else if (this.previousFrame >= 0 ) {
-        this.addStrikeBonus(roll);
-        this.addSpareBonus(roll);
-      }
-    } else if (this.previousFrame >= 0 ) {
-      this.addStrikeBonus(roll);
-      this.addSpareBonus(roll);
+      this.addFinalFrameBonus(roll);
+    } else {
+      this.addFullBonus(roll);
     }
   }
-  addStrikeBonus(roll) {
+  addFinalFrameBonus(roll) {
+    if (this.frames[this.previousFrame+1].type === 'Complete') {
+      // 3rd roll, frame 10 -> No bonus
+    } else if (this.frames[this.previousFrame+1].roll2 !== undefined) {
+      // 2nd roll, frame 10 -> Less bonus
+      this.firstStrikeBonus(roll);
+      this.addSpareBonus(roll);
+    } else {
+      // 1st roll, frame 10 -> Full bonus
+      this.addFullBonus(roll);
+    }
+  }
+  addFullBonus(roll) {
+    this.firstStrikeBonus(roll);
+    this.secondStrikeBonus(roll);
+    this.addSpareBonus(roll);
+  }
+  firstStrikeBonus(roll) {
     if (this.frames[this.previousFrame].type === 'Strike') {
       this.frames[this.previousFrame].addBonus(roll);
-      if (this.previousFrame >= 1) {
-        if (this.frames[this.previousFrame-1].type === 'Strike') {
-          this.frames[this.previousFrame-1].addBonus(roll);
-        }
+    }
+  }
+  secondStrikeBonus(roll) {
+    if (this.previousFrame >= 1) {
+      if (this.frames[this.previousFrame-1].type === 'Strike') {
+        this.frames[this.previousFrame-1].addBonus(roll);
       }
     }
   }
