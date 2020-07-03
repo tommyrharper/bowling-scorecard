@@ -98,5 +98,12 @@ describe('Frame,', function() {
       frame.addRoll(5);
       expect(frame.type).toEqual('Incomplete');
     });
+
+    it('Knows its is complete after a strike and 2 rolls', () => {
+      frame.addRoll(10);
+      frame.addRoll(5);
+      frame.addRoll(5);
+      expect(frame.type).toEqual('Complete');
+    });
   });
 });
