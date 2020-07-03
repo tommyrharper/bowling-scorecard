@@ -117,3 +117,27 @@ I create the updateScore function to solve this:
 ```
 
 GREEN.
+
+Now lets add bonus points functionality to the Frame class. We will write at test that expects frame.addBonus to update the frameScore. RED.
+
+- Add addBonus method to Frame class.
+
+Green.
+
+Now I need to Frame to know if it is a Strike or not.
+
+- Write test for is not a strike. RED.
+- Write isStrike method returns false. Green.
+- Write test for isStrike. RED
+- Write propper solution in isStrike method. GREEN.
+
+Now I need to do the same for isSpare and isOpenFrame.
+
+- Test for is not a spare. RED.
+- Add isSpare method to Frame.js. GREEN.
+- Test for isSpare. RED.
+- Add logic to isSpare method. GREEN.
+- Test for isOpenFrame. RED.
+- Add isOpenFrame method Frame class. GREEN.
+
+Now lets test for some more complex behaviour. A strike, 1, 3 should score 18. RED
