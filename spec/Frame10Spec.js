@@ -19,8 +19,15 @@ describe('Frame,', function() {
       expect(frame.roll2).toEqual(0);
     });
 
-    it('Rejects third roll', () => {
+    it('Accepts a third roll', () => {
       frame.addRoll(10);
+      frame.addRoll(1);
+      expect(frame.roll3).toEqual(1);
+    });
+
+    it('Rejects fourth roll', () => {
+      frame.addRoll(10);
+      frame.addRoll(1);
       expect(function() {
         frame.addRoll(1);
       }).toThrowError('Frame already full');
