@@ -42,39 +42,26 @@ describe('Frame,', function() {
   });
 
   describe('Knows type of frame', () => {
-    it('Knows if it is not a strike', () => {
+    it('Knows if it is undefined', () => {
       frame.addRoll(5);
-      frame.addRoll(5);
-      expect(frame.isStrike()).toEqual(false);
+      expect(frame.type).toEqual(undefined);
     });
 
     it('Knows if it is a strike', () => {
       frame.addRoll(10);
-      expect(frame.isStrike()).toEqual(true);
+      expect(frame.type).toEqual('Strike');
     });
 
     it('Knows if it is a spare', () => {
       frame.addRoll(5);
       frame.addRoll(5);
-      expect(frame.isSpare()).toEqual(true);
-    });
-
-    it('Knows if it is not a spare', () => {
-      frame.addRoll(10);
-      expect(frame.isSpare()).toEqual(false);
+      expect(frame.type).toEqual('Spare');
     });
 
     it('Knows if it is an open frame', () => {
       frame.addRoll(2);
       frame.addRoll(5);
-      expect(frame.isOpenFrame()).toEqual(true);
-    });
-
-    it('Knows if it is not an open frame', () => {
-      frame.addRoll(10);
-      expect(frame.isOpenFrame()).toEqual(false);
+      expect(frame.type).toEqual('OpenFrame');
     });
   });
-
-
 });
