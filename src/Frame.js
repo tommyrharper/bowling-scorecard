@@ -4,6 +4,13 @@ class Frame {
     this.roll2 = roll2;
     this.score = roll1 + roll2;
   }
+  isStrike() {
+    if (this.roll1 === 10) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   addBonus(bonus) {
     this.score += bonus;
   }
