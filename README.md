@@ -19,6 +19,19 @@ node_js:
   - "stable"
 ```
 
+### Setting up ESLint
+
+Before you can initialise ESLint you have to run ```npm init```. Then you can run ```eslint --init```. Then simply go through the different questions, I selected google for my style guide.
+
+Then there is one important adjustment to make to the ```.eslint.json``` file:
+```json
+    "rules": {
+        "require-jsdoc": 0,
+        "no-unused-vars": 0
+    }
+```
+Simply change this bit of the rules and then you are ready to go!
+
 # Developmental Journal
 
 ## Planning
@@ -46,4 +59,23 @@ Then I had to configure Jasmine, so I added the following code to ```SpecRunner.
   <script src="spec/ScorecardSpec.js"></script>
   <script src="spec/FrameSpec.js"></script>
   <script src="spec/Frame10Spec.js"></script>
+```
+
+### Writing my first tests
+
+First I want to Test Drive the creation of my Scorecard and Frame classes. Lets start with something simple, the score should start at 0:
+```JavaScript
+describe('scorecard,', function() {
+  let scorecard;
+
+  beforeEach(function() {
+    scorecard = new Scorecard
+  });
+
+  describe('Adding Rolls', function() {
+    it('Starts with a score of 0 for 0 rolls', () => {
+      expect(scorecard.score).toEqual(0);
+    });
+  });
+});
 ```
