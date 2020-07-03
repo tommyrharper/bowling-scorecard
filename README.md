@@ -222,5 +222,14 @@ Oh no! I wasn't expecting that. Lets find the problem:
 - I made a false assumption that on the final frame, the game is complete after a spare. This is false! This is the root of the error. Lets fix it. GREEN.
 - Time to refactor. I refactored a few methods including this.addSpareBonus(). GREEN.
 
+Test for 9 strikes, 2,2. RED.
+
+- Change ```else if``` statement to ```if```. GREEN.
+
+Test for 10 times open frames and then a 5 scores 150. RED.
+
+- Another false assumption, there should be no spare bonus on the second last role. GREEN.
+
+As far as I can tell that is it. I can't think of any more edge cases. It seems to be working.
 
 
