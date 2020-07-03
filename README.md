@@ -79,3 +79,22 @@ describe('scorecard,', function() {
   });
 });
 ```
+
+RED.
+
+The solution to this most simply:
+
+```JavaScript
+class Scorecard {
+  constructor() {
+    this.score = 0;
+  }
+}
+```
+GREEN.
+
+Now to similarly test drive the creation of the Frame class.
+
+I write the first test to check the Frame stores the correct rolls. RED.
+
+Create the class with ```this.roll1``` and ```this.roll2```. GREEN.
