@@ -15,12 +15,5 @@ describe('Scorecard,', function() {
       scorecard.addRoll(3);
       expect(scorecard.score).toEqual(4);
     });
-
-    it('Score of 4 for rolls 1, 3', () => {
-      scorecard.addRoll(10);
-      scorecard.addRoll(1);
-      scorecard.addRoll(3);
-      expect(scorecard.score).toEqual(18);
-    });
   });
 });
