@@ -12,7 +12,6 @@ $(document).ready(function() {
     const frameIndex = scorecard.frame;
 
 
-    // if (rollScore === 10) {
     if (scorecard.frames[frameIndex].type === 'Strike') {
       $('#roll' + numberOfRolls).text(rollScore);
       numberOfRolls += 1;
@@ -51,13 +50,13 @@ $(document).ready(function() {
     //   $('#frame' + scorecard.frames.length).text;
     // }
 
-    // updateButtons(scorecard.rolls.length, rollScore);
+    updateButtons(scorecard.frames[frameIndex].type, rollScore);
 
     // $('#frame' + scorecard.frame+1).text(scorecard.score);
   });
 
-  function updateButtons(rollsThisFrame, rollScore) {
-    if (rollsThisFrame === 1) {
+  function updateButtons(frameType, rollScore) {
+    if (frameType === 'Incomplete') {
       for (i = 11-rollScore; i < 11; i++) {
         $(`#${i}.record`).prop('disabled', true);
       }
