@@ -1,5 +1,6 @@
 class Frame {
   constructor() {
+    this.type = undefined;
     this.roll1 = undefined;
     this.roll2 = undefined;
     this.score = undefined;
@@ -22,31 +23,16 @@ class Frame {
       this.roll1 = roll;
       if (roll === 10) {
         this.roll2 = 0;
+        this.type = 'Strike';
       }
     }
   }
   addSecondRoll(roll) {
     this.roll2 = roll;
-  }
-  isStrike() {
-    if (this.roll1 === 10) {
-      return true;
+    if (this.roll1 + roll === 10) {
+      this.type = 'Spare';
     } else {
-      return false;
-    }
-  }
-  isSpare() {
-    if (this.roll1 + this.roll2 === 10 && this.roll1 != 10) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  isOpenFrame() {
-    if (this.roll1 + this.roll2 < 10) {
-      return true;
-    } else {
-      return false;
+      this.type = 'OpenFrame';
     }
   }
   addBonus(bonus) {
