@@ -42,7 +42,8 @@ class Scorecard {
   addFinalFrameBonus(roll) {
     if (this.frames[this.frame].type === 'Complete') {
       // 3rd roll, frame 10 -> No bonus
-    } else if (this.frames[this.frame].roll2 !== undefined) {
+    }
+    if (this.frames[this.frame].roll2 !== undefined) {
       // 2nd roll, frame 10 -> Less bonus
       this.firstStrikeBonus(roll);
       this.addSpareBonus(roll);
