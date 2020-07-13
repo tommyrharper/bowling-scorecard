@@ -42,29 +42,8 @@ $(document).ready(function() {
       }
     }
 
-    // This works DONT WORRY/IGNORE
     $('#score').text(scorecard.score);
     $('#frames').text(frameNumber);
-
-
-    // numberOfRolls += 1;
-    // const rollScore = parseInt(e.currentTarget.value);
-    // scorecard.addRoll(rollScore);
-    // const frameNumber = scorecard.frame+1;
-
-    // $('#score').text(scorecard.score);
-    // $('#frames').text(frameNumber);
-
-    // if (frameNumber >= 10 && rollScore === 10) {
-    //   $('#roll' + numberOfRolls).text(rollScore);
-    // } else if (rollScore === 10) {
-    //   $('#roll' + numberOfRolls).text(rollScore);
-    //   numberOfRolls += 1;
-    //   $('#roll' + numberOfRolls).text('/');
-    // } else {
-    //   $('#roll' + numberOfRolls).text(rollScore);
-    //   $('#frame' + scorecard.frames.length).text;
-    // }
 
     if (frameNumber === 10) {
       updateButtonsFrame10(scorecard.frames[frameIndex].type,
@@ -73,8 +52,6 @@ $(document).ready(function() {
     } else {
       updateButtons(scorecard.frames[frameIndex].type, rollScore);
     }
-
-    // $('#frame' + scorecard.frame+1).text(scorecard.score);
   });
 
   function updateButtons(frameType, rollScore) {
