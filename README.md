@@ -1,6 +1,8 @@
 # Bowling Scorecard
 
-This is a JavaScript application for a digital Bowling Scorecard
+This is a Test Driven JavaScript application for a digital Bowling Scorecard.
+
+View the website here at [http://toms-bowling-scorecard.surge.sh/](http://toms-bowling-scorecard.surge.sh/).
 
 ## Set up
 
