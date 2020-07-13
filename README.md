@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/tommyrharper/bowling-scorecard.svg?branch=master)](https://travis-ci.com/tommyrharper/bowling-scorecard)
-
+<img src="https://img.shields.io/badge/Tests-Passing-100%25-brightgreen" alt="">
+<img src="https://img.shields.io/badge/ESLint-No%20Offences-brightgreen" alt="">
 # Bowling Scorecard
 
 This is a Test Driven JavaScript application for a digital Bowling Scorecard.
