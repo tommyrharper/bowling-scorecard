@@ -272,3 +272,19 @@ And added in the jQuery:
   });
 ```
 Now everything works as intended. The only thing left is to add a touch of colour using CSS.
+
+I made the background blue and the writing white. There we go, that is a little bit prettier.
+
+## Final notes
+
+This had been a very education project for me, it is actually the second time I have done it. The first time I made it work, but the code was horrendously ugly and spaghetti like. I discovered this when I went to make a little change to it and realised how bad my code was.
+
+Rather than just skip over it, I decided to fix it properly and do the code from scratch, so I could painfully teach myself the lesson of why to write clean code.
+
+There is still a lot I could work on here. The code is not ideal, and I haven't implemented dependency injection, though I did do that first time around so in that regard this version is actually worse. But overall the code is an improvement, and if I find time I will come back to this and implement that.
+
+It was fun and interesting learning how bowling works, and implementing the logic for each and every possible scenario (there are quite a few). 
+
+Overall this is a great project and has really improved my JavaScript skills. I hope you enjoyed the read, and if you ever play bowling you know where to come!
+
+:)
