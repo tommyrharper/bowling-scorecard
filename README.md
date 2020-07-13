@@ -244,3 +244,7 @@ Now I quickly sketch out a table in HTML, and write some logic in jQuery to disp
 ### jQuery Logic
 
 The jQuery logic was not totally straight forward, had to think a little bit about the final frame and the buttons that are available, but overall was not too hard.
+
+### Adding a reset button
+
+Okay so now all the scores add up and the buttons work for the UI, but there is no reset button, lets add that.
