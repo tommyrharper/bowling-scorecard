@@ -19,6 +19,8 @@ Create ```.travis.yml```
 language: node_js
 node_js:
   - "stable"
+script:
+- echo "Success!"
 ```
 
 ### Setting up ESLint
