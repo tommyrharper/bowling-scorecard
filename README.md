@@ -1,8 +1,14 @@
+[![Build Status](https://travis-ci.com/tommyrharper/bowling-scorecard.svg?branch=master)](https://travis-ci.com/tommyrharper/bowling-scorecard)
+
 # Bowling Scorecard
 
 This is a Test Driven JavaScript application for a digital Bowling Scorecard.
 
 View the website here at [http://toms-bowling-scorecard.surge.sh/](http://toms-bowling-scorecard.surge.sh/).
+
+## Tests
+
+Tests are written in jasmine and the results can be seen in ```SpecRunner.html```.
 
 ## Set up
 
