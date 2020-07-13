@@ -1,6 +1,22 @@
 $(document).ready(function() {
-  const scorecard = new Scorecard();
+  let scorecard = new Scorecard();
   let numberOfRolls = 0;
+
+  $('.Reset').click(function(e) {
+    e.preventDefault(e);
+    scorecard = new Scorecard();
+    numberOfRolls = 0;
+    $('#score').text(scorecard.score);
+    $('#frames').text(0);
+    for (let i = 0; i < 10; i++) {
+      $('#frame' + (i+1)).text('');
+      $('.record').prop('disabled', false);
+    }
+    for (let i = 0; i < 21; i++) {
+      $('#roll' + (i+1)).text('');
+    }
+    $('#score').text('');
+  });
 
   $('.record').click(function(e) {
     e.preventDefault(e);
@@ -74,7 +90,6 @@ $(document).ready(function() {
   function updateButtonsFrame10(frameType, rollScore, finalType) {
     if (frameType === 'Incomplete') {
       if (rollScore < 10 && finalType === 'Spare') {
-        console.log("yo");
         $('.record').prop('disabled', false);
       } else if (rollScore < 10) {
         for (i = 11-rollScore; i < 11; i++) {
