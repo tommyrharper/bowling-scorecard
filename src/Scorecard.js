@@ -40,7 +40,6 @@ class Scorecard {
     }
   }
   addFinalFrameBonus(roll) {
-    // if (this.frames[this.frame].type === 'Complete') {
     if (this.frames[this.frame].roll3 !== undefined) {
       // 3rd roll, frame 10 -> No bonus
     } else if (this.frames[this.frame].roll2 !== undefined) {
@@ -64,12 +63,8 @@ class Scorecard {
   }
   secondStrikeBonus(roll) {
     if (this.lastFrame >= 1) {
-      // IF CURRENT FRAME IS COMPLETE AND NOT A STRIKE
-      if (this.frames[this.lastFrame].type !== 'Strike') {
-        // this.frames[this.lastFrame].addBonus(roll);
-      } else
-      // IF PREVIOUS FRAME WAS A STRIKE
-      if (this.frames[this.secondLastFrame].type === 'Strike') {
+      if (this.frames[this.secondLastFrame].type === 'Strike' &&
+      this.frames[this.lastFrame].type === 'Strike') {
         console.log('ADD 2ND STRIKE BONUS');
         this.frames[this.secondLastFrame].addBonus(roll);
       }
