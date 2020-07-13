@@ -7,7 +7,6 @@ $(document).ready(function() {
     scorecard = new Scorecard();
     numberOfRolls = 0;
     $('#score').text(scorecard.score);
-    $('#frames').text(0);
     for (let i = 0; i < 10; i++) {
       $('#frame' + (i+1)).text('');
       $('.record').prop('disabled', false);
@@ -43,7 +42,6 @@ $(document).ready(function() {
     }
 
     $('#score').text(scorecard.score);
-    $('#frames').text(frameNumber);
 
     if (frameNumber === 10) {
       updateButtonsFrame10(scorecard.frames[frameIndex].type,
