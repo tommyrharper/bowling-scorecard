@@ -51,7 +51,7 @@ describe('Scorecard,', function() {
       scorecard.addRoll(5);
       scorecard.addRoll(5);
       scorecard.addRoll(10);
-      expect(scorecard.score).toEqual(60);
+      expect(scorecard.score).toEqual(50);
     });
 
     it('Role a spare, strike, strike', () => {
