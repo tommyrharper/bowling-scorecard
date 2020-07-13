@@ -240,3 +240,7 @@ Okay now to build a user interface.
 Lets start by creating ```index.html``` and ```interface.js``` and installing ```jquery.js```.
 
 Now I quickly sketch out a table in HTML, and write some logic in jQuery to display the results to the screen.
+
+### jQuery Logic
+
+The jQuery logic was not totally straight forward, had to think a little bit about the final frame and the buttons that are available, but overall was not too hard.
