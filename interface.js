@@ -50,7 +50,13 @@ $(document).ready(function() {
     //   $('#frame' + scorecard.frames.length).text;
     // }
 
-    updateButtons(scorecard.frames[frameIndex].type, rollScore);
+    if (frameNumber === 10) {
+      updateButtonsFrame10(scorecard.frames[frameIndex].type,
+          rollScore,
+          scorecard.frames[frameIndex].finalType);
+    } else {
+      updateButtons(scorecard.frames[frameIndex].type, rollScore);
+    }
 
     // $('#frame' + scorecard.frame+1).text(scorecard.score);
   });
@@ -62,6 +68,21 @@ $(document).ready(function() {
       }
     } else {
       $('.record').prop('disabled', false);
+    }
+  }
+
+  function updateButtonsFrame10(frameType, rollScore, finalType) {
+    if (frameType === 'Incomplete') {
+      if (rollScore < 10 && finalType === 'Spare') {
+        console.log("yo");
+        $('.record').prop('disabled', false);
+      } else if (rollScore < 10) {
+        for (i = 11-rollScore; i < 11; i++) {
+          $(`#${i}.record`).prop('disabled', true);
+        }
+      }
+    } else {
+      $('.record').prop('disabled', true);
     }
   }
 });
