@@ -137,7 +137,7 @@ describe('Scorecard,', function() {
       expect(scorecard.frames[9].type).toEqual('Complete');
     });
 
-    it('10 * open frame and 5 scores 150 ', () => {
+    it('10 * spare and 5 scores 150 ', () => {
       for (let i = 0; i < 20; i++) {
         scorecard.addRoll(5);
       }
