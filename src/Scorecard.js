@@ -18,6 +18,7 @@ class Scorecard {
     ];
   }
   addRoll(roll) {
+    console.log('roll', roll);
     for (let i = 0; i < 10; i++) {
       if (this.frames[i].type === 'Incomplete') {
         this.frames[i].addRoll(roll);
@@ -25,15 +26,16 @@ class Scorecard {
         break;
       }
     }
-    if (this.lastFrame >= 0) {
+    if (this.frame >= 1) {
       this.addBonusPoints(roll);
     }
     this.updateScore();
   }
   addBonusPoints(roll) {
-    if (this.lastFrame === 8) {
+    if (this.frame === 9) {
       this.addFinalFrameBonus(roll);
     } else {
+      console.log('add full bonus');
       this.addFullBonus(roll);
     }
   }
@@ -56,12 +58,19 @@ class Scorecard {
   }
   firstStrikeBonus(roll) {
     if (this.frames[this.lastFrame].type === 'Strike') {
+      console.log('ADD 1ST STRIKE BONUS');
       this.frames[this.lastFrame].addBonus(roll);
     }
   }
   secondStrikeBonus(roll) {
     if (this.lastFrame >= 1) {
+      // IF CURRENT FRAME IS COMPLETE AND NOT A STRIKE
+      if (this.frames[this.lastFrame].type !== 'Strike') {
+        // this.frames[this.lastFrame].addBonus(roll);
+      } else
+      // IF PREVIOUS FRAME WAS A STRIKE
       if (this.frames[this.secondLastFrame].type === 'Strike') {
+        console.log('ADD 2ND STRIKE BONUS');
         this.frames[this.secondLastFrame].addBonus(roll);
       }
     }
@@ -69,6 +78,7 @@ class Scorecard {
   addSpareBonus(roll) {
     if (this.frames[this.lastFrame].type === 'Spare') {
       if (['Incomplete', 'Strike'].includes(this.frames[this.frame].type)) {
+        console.log('ADD SPARE BONUS');
         this.frames[this.lastFrame].addBonus(roll);
       }
     }
@@ -78,5 +88,6 @@ class Scorecard {
     for (let i = 0; i < 10; i++) {
       this.score += this.frames[i].score;
     }
+    console.log('this.score', this.score);
   }
 }
