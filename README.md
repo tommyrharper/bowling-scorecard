@@ -248,3 +248,27 @@ The jQuery logic was not totally straight forward, had to think a little bit abo
 ### Adding a reset button
 
 Okay so now all the scores add up and the buttons work for the UI, but there is no reset button, lets add that.
+
+So I added it into index.html:
+```html
+<button class="Reset" id="Reset" value="Reset">Reset</button>
+```
+And added in the jQuery:
+```JavaScript
+  $('.Reset').click(function(e) {
+    e.preventDefault(e);
+    scorecard = new Scorecard();
+    numberOfRolls = 0;
+    $('#score').text(scorecard.score);
+    $('#frames').text(0);
+    for (let i = 0; i < 10; i++) {
+      $('#frame' + (i+1)).text('');
+      $('.record').prop('disabled', false);
+    }
+    for (let i = 0; i < 21; i++) {
+      $('#roll' + (i+1)).text('');
+    }
+    $('#score').text('');
+  });
+```
+Now everything works as intended. The only thing left is to add a touch of colour using CSS.
